@@ -1,0 +1,25 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <section class="sheet-wrapper">
+    <header class="sheet-header">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <span class="title">
+        <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+      </span>
+
+    </header>
+
+    <div class="attr-group margin-top-8">
+      <div class="cell">
+        <span class="cell--title">레어도</span>
+      </div>
+      <input type="text" name="data.rarity" value="{{data.rarity}}">
+    </div>
+
+    <div class="cell">
+      <h4 class="cell--title">설명</h4>
+    </div>
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+
+  </section>
+    
+</form>

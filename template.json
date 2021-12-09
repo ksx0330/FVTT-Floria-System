@@ -1,0 +1,85 @@
+{
+"Actor": {
+  "types": ["pc"],
+  "pc": {
+    "attributes": {
+      "health": {
+        "value": 10,
+        "min": 0,
+        "max": 10
+      },
+
+      "body": {
+        "value": ""
+      },
+      "mental": {
+        "value": ""
+      },
+      "trick": {
+        "value": ""
+      },
+      "wisdom": {
+        "value": ""
+      },
+
+      "magic": {
+        "attr": "trick"
+      },
+      "search": {},
+
+      "activity": {
+        "value": ""
+      },
+      "agility": {
+        "value": ""
+      },
+      "harmony": {
+        "value": 3
+      },
+      "weight": {
+        "value": ""
+      },
+      "exp": {
+        "value": 0
+      }
+
+    },
+    "details": {
+      "sex": "",
+      "age": "",
+      "race": "",
+      "life": "",
+      "magic": "",
+      "plant": "",
+      "memo": ""
+
+    }
+    
+  }
+},
+"Item": {
+  "types": ["skill", "magic", "friend", "item"],
+  "skill": {
+    "class": "",
+    "timing": "",
+    "note": "",
+    "description": ""
+  },
+  "magic": {
+    "class": "",
+    "cost": "",
+    "position": "",
+    "note": "",
+    "description": ""
+  },
+  "friend": {
+    "used": false,
+    "point": 0,
+    "description": ""
+  },
+  "item": {
+    "rarity": 0,
+    "description": ""
+  }
+}
+}

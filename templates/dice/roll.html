@@ -1,0 +1,21 @@
+<div class="dice-roll">
+    {{#if flavor}}
+    <h2><b>{{flavor}}</b></h2>
+    {{/if}}
+    <div class="dice-result">
+        <div class="dice-formula">{{formula}} <= {{num}}</div>
+        {{{tooltip}}}
+        <h4 class="dice-total">
+            {{total}}
+            {{#ifEquals total "2"}} 
+              <span style="color: #862020; font-size:0.7em;"> ▶ 펌블 </span>
+            {{else}}
+              {{#ifSuccess total num}} 
+                <span style="color: #0f6f0f; font-size:0.7em;"> ▶ 성공  </span>
+              {{else}}
+                <span style="color: #862020;font-size:0.7em;"> ▶ 실패 </span>
+              {{/ifSuccess}}
+            {{/ifEquals}}
+        </h4>
+    </div>
+</div>

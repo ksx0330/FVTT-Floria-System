@@ -1,0 +1,338 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+  <div class="sheet-wrapper">
+    <button style="display: none;">Input Button Click bypass</button>
+    {{!-- Sheet Header --}}
+    <header class="sheet-header header-size">
+      <span class="title">
+        <input class="input--title" name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
+        <button class="roll-btn"><i class="fas fa-dice"></i></button>
+      </span>
+
+    </header>
+
+
+    <section class="sheet-stat margin-top-8">
+
+      <section class="sheet-left">
+        <div class="cell cell--img">
+          <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        </div>
+
+        <div class="cell margin-top-8">
+          <label for="data.attributes.overflow.value" class="cell--title roll-magic">마법 행사            
+            <span class="num">{{data.attributes.magic.value}}</span>
+          </label>
+          
+          <div class="cell--counter">
+            <span class="attribute">정신</span>
+            <span class="slash"> + </span>
+            <select class="attribute" name="data.attributes.magic.attr">
+              {{#select data.attributes.magic.attr}}
+              <option value="body">육체</option>
+              <option value="trick">요령</option>
+              <option value="wisdom">지혜</option>
+              {{/select}}
+            </select>
+          </div>
+        </div>
+
+        <div class="cell margin-top-8">
+          <label for="data.attributes.overflow.value" class="cell--title roll-search">탐색           
+            <span class="num">{{data.attributes.search.value}}</span>
+          </label>
+          
+          <div class="cell--counter">
+            <span class="attribute">요령</span>
+            <span class="slash"> + </span>
+            <span class="attribute">지혜</span>
+          </div>
+        </div>
+
+        <div class="cell margin-top-8">
+          <label for="data.attributes.overflow.value" class="cell--title roll-damage">대미지
+            <i class="fas fa-dice"></i>
+          </label>
+        </div>
+
+      </section>
+
+
+      <section class="sheet-right">
+        <section class="sheet-attributes">
+          <div class="cell cell--basic">
+            <label class="cell--title">생명력</label>
+            <div class="cell--counter">
+              <input type="text" name="data.attributes.health.value" value="{{data.attributes.health.value}}" data-dtype="Number"/>
+              <span class="slash"> / </span>
+              <input type="text" name="data.attributes.health.max" value="{{data.attributes.health.max}}" data-dtype="Number"/>
+            </div>
+          </div>
+
+          <div class="cell cell--basic">
+            <label class="cell--title">
+              육체
+            </label>
+            <input type="text" name="data.attributes.body.value" value="{{data.attributes.body.value}}" data-dtype="Number">
+          </div>
+
+          <div class="cell cell--basic">
+            <label class="cell--title">
+              정신
+            </label>
+            <input type="text" name="data.attributes.mental.value" value="{{data.attributes.mental.value}}" data-dtype="Number">
+          </div>
+
+          <div class="cell cell--basic">
+            <label class="cell--title">
+              요령
+            </label>
+            <input type="text" name="data.attributes.trick.value" value="{{data.attributes.trick.value}}" data-dtype="Number">
+          </div>
+
+          <div class="cell cell--basic">
+            <label class="cell--title">
+              지혜
+            </label>
+            <input type="text" name="data.attributes.wisdom.value" value="{{data.attributes.wisdom.value}}" data-dtype="Number">
+          </div>
+
+          <div class="cell cell--basic">
+            <label class="cell--title">
+              활동성
+            </label>
+            <input type="text" name="data.attributes.activity.value" value="{{data.attributes.activity.value}}" data-dtype="Number">
+          </div>
+
+          <div class="cell cell--basic">
+            <label class="cell--title">
+              민첩성
+            </label>
+            <input type="text" name="data.attributes.agility.value" value="{{data.attributes.agility.value}}" data-dtype="Number">
+          </div>
+
+          <div class="cell cell--basic">
+            <label class="cell--title">
+              조화
+            </label>
+            <input type="text" name="data.attributes.harmony.value" value="{{data.attributes.harmony.value}}" data-dtype="Number">
+          </div>
+
+          <div class="cell cell--basic">
+            <label class="cell--title">
+              소지 한계
+            </label>
+            <input type="text" name="data.attributes.weight.value" value="{{data.attributes.weight.value}}" data-dtype="Number">
+          </div>
+
+          <div class="cell cell--basic">
+            <label class="cell--title">
+              경험치
+            </label>
+            <input type="text" name="data.attributes.exp.value" value="{{data.attributes.exp.value}}" data-dtype="Number">
+          </div>
+
+          <section class="sheet-main">
+            {{!-- Sheet Tab Navigation --}}
+            <nav class="sheet-tabs tabs" data-group="primary">
+                <a class="item" data-tab="description">소개</a>
+                <a class="item" data-tab="magic">스킬/마법</a>
+                <a class="item" data-tab="friend">친밀도</a>
+                <a class="item" data-tab="item">소지품</a>
+            </nav>
+
+            {{!-- Sheet Body --}}
+            <section class="sheet-body">
+              {{!-- Description Tab --}}
+              <div class="tab description" data-group="primary" data-tab="description">
+                <div class="cell">
+                  <h2 class="cell--title">기본 정보</h2>
+                </div>
+                <table>
+                  <colgroup>
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 30%;">
+                  </colgroup>
+
+
+                  <tbody>
+                    <tr>
+                        <th>성별</th>
+                        <td><textarea name="data.details.sex" rows="1">{{data.details.sex}}</textarea></td>
+                        <th>나이</th>
+                        <td><textarea name="data.details.age" rows="1">{{data.details.age}}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>종족</th>
+                        <td colspan="3"><textarea name="data.details.race" rows="1">{{data.details.race}}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>라이프 스타일</th>
+                        <td colspan="3"><textarea name="data.details.life" rows="1">{{data.details.life}}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>매직 스타일</th>
+                        <td colspan="3"><textarea name="data.details.magic" rows="1">{{data.details.magic}}</textarea></td>
+                    </tr>
+                    <tr>
+                        <th>몸에 심은<br>마법 식물</th>
+                        <td colspan="3"><textarea name="data.details.plant" rows="3">{{data.details.plant}}</textarea></td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div class="cell">
+                  <h2 class="cell--title">메모</h2>
+                </div>
+                {{editor content=data.details.memo target="data.details.memo" button=true owner=owner editable=editable}}
+
+              </div>
+
+              {{!-- Magic Tab --}}
+              <div class="tab magic" data-group="primary" data-tab="magic">
+                <div class="cell">
+                  <h2 class="cell--title">
+                    <label>스킬</label>
+                    <div class="item-controls">
+                      <button class="item-control item-create white-btn" title='스킬 생성' data-type="skill">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </h2>
+                  <ol class="items-list">
+                  {{#each actor.skill as |item id|}}
+                    <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                      <h4 class="item-name">
+                        <span class="echo-item" style="float:left;"><img src="{{item.img}}" title="{{item.name}}" width="37" height="37" style="vertical-align : middle; margin-right:10px;"></span> 
+                       <span class="item-label">{{item.name}}
+                        <br>
+                        <span style="color : gray; font-size : smaller;">
+                        사용조건 : {{item.data.timing}} / 비고 : {{item.data.note}}
+                        <span class="item-details-toggle"><i class="fas fa-chevron-down"></i></span></span></h4>
+                      
+                        <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                      </div>
+                      <div class="item-description">{{{item.data.description}}}</div>
+                    </li>
+                  {{/each}}
+                  </ol>
+                </div>
+
+                <div class="cell">
+                  <h2 class="cell--title">
+                    <label>마법</label>
+                    <div class="item-controls">
+                      <button class="item-control item-create white-btn" title='마법 생성' data-type="magic">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </h2>
+                  <ol class="items-list">
+                  {{#each actor.magic as |item id|}}
+                    <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                      <h4 class="item-name">
+                        <span class="echo-item" style="float:left;"><img src="{{item.img}}" title="{{item.name}}" width="37" height="37" style="vertical-align : middle; margin-right:10px;"></span> 
+                       <span class="item-label">{{item.name}}
+                        <br>
+                        <span style="color : gray; font-size : smaller;">
+                        코스트 : {{item.data.cost}} / 진영 : {{item.data.position}} / 비고 : {{item.data.note}}
+                        <span class="item-details-toggle"><i class="fas fa-chevron-down"></i></span></span></h4>
+                      
+                        <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                      </div>
+                      <div class="item-description">{{{item.data.description}}}</div>
+                    </li>
+                  {{/each}}
+                  </ol>
+                </div>
+
+
+              </div>
+
+              {{!-- Friend Tab --}}
+              <div class="tab friend" data-group="primary" data-tab="friend">
+                <div class="cell">
+                  <h2 class="cell--title">
+                    <label>친밀도</label>
+                    <div class="item-controls">
+                      <button class="item-control item-create white-btn" title='친밀도 생성' data-type="friend">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </h2>
+                  <ol class="items-list">
+                  {{#each actor.friend as |item id|}}
+                    <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                      <h4 class="item-name">
+                        <span class="echo-item" style="float:left;"><img src="{{item.img}}" title="{{item.name}}" width="37" height="37" style="vertical-align : middle; margin-right:10px;"></span> 
+                       <span class="item-label">{{item.name}}
+                        <br>
+                        <span style="color : gray; font-size : smaller;">
+                        친밀도 : {{item.data.point}} / 체크: {{#if item.data.used}} O {{else}} X {{/if}}
+                        <span class="item-details-toggle"><i class="fas fa-chevron-down"></i></span></span></h4>
+                      
+                        <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                      </div>
+                      <div class="item-description">{{{item.data.description}}}</div>
+                    </li>
+                  {{/each}}
+                  </ol>
+                </div>
+
+
+
+              </div>
+
+              {{!-- Item Tab --}}
+              <div class="tab item" data-group="primary" data-tab="item">
+                <div class="cell">
+                  <h2 class="cell--title">
+                    <label>소지품</label>
+                    <div class="item-controls">
+                      <button class="item-control item-create white-btn" title='소지품 생성' data-type="item">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </h2>
+                  <ol class="items-list">
+                  {{#each actor.haveItem as |item id|}}
+                    <li class="item flexrow" data-item-id="{{item._id}}" draggable="true">
+                      <h4 class="item-name">
+                        <span class="echo-item" style="float:left;"><img src="{{item.img}}" title="{{item.name}}" width="37" height="37" style="vertical-align : middle; margin-right:10px;"></span> 
+                       <span class="item-label">{{item.name}}
+                        <br>
+                        <span style="color : gray; font-size : smaller;">
+                        레어도 : {{item.data.rarity}}
+                        <span class="item-details-toggle"><i class="fas fa-chevron-down"></i></span></span></h4>
+                      
+                        <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                      </div>
+                      <div class="item-description">{{{item.data.description}}}</div>
+                    </li>
+                  {{/each}}
+                  </ol>
+                </div>
+
+              </div>
+
+            </section>  
+
+          </section>
+          
+
+        </section>
+      </section>
+    </section>
+
+  </div>
+</form>

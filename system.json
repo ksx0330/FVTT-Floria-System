@@ -1,0 +1,37 @@
+{
+  "name": "floria",
+  "title": "취록의 플로리아",
+  "description": "취록의 플로리아",
+  "author": "ltaeng",
+  "authors": [],
+  "url": "",
+  "license": "LICENSE.txt",
+  "flags": {},
+  "version": "0.0.1",
+  "minimumCoreVersion": "0.8.4",
+  "compatibleCoreVersion": "0.8.9",
+  "scripts": [],
+  "esmodules": [
+    "module/init.js"
+  ],
+  "styles": [
+    "styles/style.css"
+  ],
+  "languages": [
+    {
+      "lang": "ko",
+      "name": "Korean",
+      "path": "lang/ko.json"
+    }
+  ],
+  "packs": [],
+  "system": [],
+  "dependencies": [],
+  "socket": false,
+  "manifest": "",
+  "download": "",
+  "protected": false,
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "health"
+}

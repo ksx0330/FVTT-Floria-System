@@ -1,0 +1,24 @@
+<div class="dice-roll">
+    {{#if flavor}}
+    <h2><b>{{flavor}}</b></h2>
+    {{/if}}
+    <div class="dice-result">
+        <table style="text-align: center;">
+          <colgroup>
+            <col span="1" style="width: 50%;">
+            <col span="1" style="width: 50%;">
+          </colgroup>
+
+          <tr>
+            <th>가로</th>
+            <td>{{x}}</td>
+          </tr>
+          <tr>
+            <th>세로</th>
+            <td>{{y}}</td>
+          </tr>
+        </table>
+        <div class="dice-formula">2d6 / 2d6</div>
+        {{{tooltip}}}
+    </div>
+</div>

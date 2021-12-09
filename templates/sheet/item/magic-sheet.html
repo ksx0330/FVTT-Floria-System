@@ -1,0 +1,45 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <section class="sheet-wrapper">
+    <header class="sheet-header">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+      <span class="title">
+        <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+      </span>
+
+    </header>
+
+    <div class="attr-group margin-top-8">
+      <div class="cell">
+        <span class="cell--title">소속</span>
+      </div>
+      <input type="text" name="data.class" value="{{data.class}}">
+
+    </div>
+
+    <div class="attr-group">
+      <div class="cell">
+        <span class="cell--title">코스트</span>
+      </div>
+      <input type="text" name="data.cost" value="{{data.cost}}">
+
+      <div class="cell">
+        <span class="cell--title">진영</span>
+      </div>
+      <input type="text" name="data.position" value="{{data.position}}">
+    </div>
+
+    <div class="attr-group">
+      <div class="cell">
+        <span class="cell--title">비고</span>
+      </div>
+      <input type="text" name="data.note" value="{{data.note}}">
+    </div>
+
+    <div class="cell">
+      <h4 class="cell--title">설명</h4>
+    </div>
+    {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+
+  </section>
+    
+</form>
