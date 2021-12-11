@@ -98,8 +98,12 @@ export class FloriaPCSheet extends ActorSheet {
       await this.document.rollDice("trick", "wisdom", "탐색");
     });
 
-    html.find(".roll-damage").click(async ev => {
-      await this.document.rollDamage();
+    html.find(".roll-normal-damage").click(async ev => {
+      await this.document.rollDamage("normal");
+    });
+
+    html.find(".roll-mob-damage").click(async ev => {
+      await this.document.rollDamage("mob");
     });
 
     html.find(".roll-btn").click(async ev => {

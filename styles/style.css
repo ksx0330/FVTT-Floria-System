@@ -34,23 +34,23 @@
   width: 100%;
 }
 
-.floria .sheet-wrapper .sheet-right {
+.floria .sheet-wrapper .sheet-left {
   -webkit-box-flex: 63%;
   -ms-flex: 63% 1 1;
   flex: 63% 1 1;
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.floria .sheet-wrapper .sheet-left {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;
   order: 1;
-  margin-right: 10px;
+}
+
+.floria .sheet-wrapper .sheet-right {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+  margin-left: 10px;
 }
 
 .floria .sheet-wrapper .sheet-stat {
@@ -87,12 +87,14 @@
 }
 
 .floria .sheet-header .title input {
-  width: calc(100% - 70px);;
+  width: calc(100% - 26px);
   color: #fff;
   border: 0;
   border-bottom: 2px solid #fff;
-  margin: 0 10px;
+  margin: 10px 10px;
   font-size: 18px;
+  height: 30px;
+  padding-left: 13px;
 }
 
 .floria .sheet-header .title .roll-btn {
@@ -102,12 +104,12 @@
   border: 0;
 }
 
-.floria .sheet-wrapper .sheet-left .num {
+.floria .sheet-wrapper .sheet-right .num {
   border: 1px solid;
   padding: 4px;
 }
 
-.floria .sheet-wrapper .sheet-left .attribute {
+.floria .sheet-wrapper .sheet-right .attribute {
   width: calc(100% - 2px);
   background: white;
   padding: 2px;
@@ -202,7 +204,7 @@
   grid-column: span 2;
 }
 
-.floria .sheet-wrapper .sheet-left .cell--title, .floria .sheet-wrapper .sheet-right .tab *  {
+.floria .sheet-wrapper .sheet-right .cell--title, .floria .sheet-wrapper .sheet-left .tab *  {
   justify-content: space-between;
 }
 
@@ -344,4 +346,10 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.floria .damage-btn {
+  background: white;
+  border-radius: 20px;
+  margin-bottom: 4px;
 }

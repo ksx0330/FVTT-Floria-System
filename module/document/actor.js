@@ -99,7 +99,7 @@ export class FloriaActor extends Actor {
 
   }
 
-  async rollDamage() {
+  async rollDamage(type) {
 
     // GM rolls.
     let chatData = {
@@ -112,7 +112,11 @@ export class FloriaActor extends Actor {
     if (rollMode === "selfroll") chatData["whisper"] = [game.user._id];
     if (rollMode === "blindroll") chatData["blind"] = true;
 
-    let roll = new Roll("2d6 + 2d6");
+    let formula = "2d6 + 2d6";
+    if (type == "mob")
+      formula = "1d6 + 1d6";
+
+    let roll = new Roll(formula);
     roll.roll();
 
     chatData.content = await renderTemplate("systems/floria/templates/dice/damage.html", {

@@ -6,7 +6,6 @@
     <header class="sheet-header header-size">
       <span class="title">
         <input class="input--title" name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
-        <button class="roll-btn"><i class="fas fa-dice"></i></button>
       </span>
 
     </header>
@@ -14,7 +13,7 @@
 
     <section class="sheet-stat margin-top-8">
 
-      <section class="sheet-left">
+      <section class="sheet-right">
         <div class="cell cell--img">
           <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
         </div>
@@ -55,10 +54,21 @@
           </label>
         </div>
 
+        <div>
+          <button class="damage-btn roll-normal-damage">일반 (2d6 / 2d6)</button>
+          <button class="damage-btn roll-mob-damage">몹 (1d6 / 1d6)</button>
+        </div>
+
+        <div class="cell margin-top-8">
+          <label for="data.attributes.overflow.value" class="cell--title roll-btn">판정
+            <i class="fas fa-dice"></i>
+          </label>
+        </div>
+
       </section>
 
 
-      <section class="sheet-right">
+      <section class="sheet-left">
         <section class="sheet-attributes">
           <div class="cell cell--basic">
             <label class="cell--title">생명력</label>
